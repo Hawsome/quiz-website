@@ -3,36 +3,36 @@
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 20px;
-  color: #333;
+  color: #333333;
 }
 
 #question-container {
   margin-top: 20px;
-  font-size: 20px;
-  color: #333;
+  font-size: 24px;
+  color: #333333;
 }
 
 #answer-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: 20px;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 24px;
+  font-size: 18px;
   background-color: #4CAF50;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -44,7 +44,7 @@ button:hover {
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 
@@ -57,10 +57,10 @@ button:disabled {
 }
 
 #score-container {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: #333333;
 }
 
 .selected {
@@ -75,14 +75,41 @@ button:disabled {
   background-color: #F44336;
 }
 
-.correct-answer {
-  font-weight: bold;
+#restart-button::before {
+  content: "\21BA";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#next-button::before {
+  content: "\279C";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#previous-button::before {
+  content: "\279C";
+  display: inline-block;
+  margin-right: 5px;
+  transform: rotateY(180deg);
+}
+
+.correct-answer::before {
+  content: "\2714";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.wrong::before {
+  content: "\2717";
+  display: inline-block;
+  margin-right: 5px;
 }
 
 /* Footer styles */
 footer {
   background-color: #f8f8f8;
-  color: #888;
+  color: #888888;
   padding: 10px;
   text-align: center;
   border-radius: 0 0 10px 10px;
@@ -97,7 +124,7 @@ footer {
 .social-icons a {
   display: inline-block;
   margin-right: 10px;
-  color: #333;
+  color: #333333;
 }
 
 .social-icons i {

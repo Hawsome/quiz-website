@@ -1,0 +1,526 @@
+HTML: 
+
+The code snippet is an HTML document structure that creates a basic quiz website. Let's go through each section and explain its purpose:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Website</title>
+  <script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+```
+
+- `<!DOCTYPE html>`: This declaration specifies the HTML version used in the document.
+- `<html>`: This is the root element of the HTML document.
+- `<head>`: This section contains metadata about the document and includes external resources like stylesheets and scripts.
+- `<meta charset="UTF-8">`: This meta tag sets the character encoding to UTF-8, which supports a wide range of characters.
+- `<title>Quiz Website</title>`: This element sets the title of the webpage, which appears in the browser's title bar or tab.
+- `<script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>`: This script tag imports the Font Awesome library, which provides icons for social media links.
+- `<link rel="stylesheet" href="styles.css">`: This link tag connects the external stylesheet `styles.css` to the HTML document for applying custom styles.
+
+The rest of the code consists of the website's content:
+
+```html
+<div class="container">
+  <h1>Quiz Website</h1>
+  <div id="question-container"></div>
+  <div id="answer-buttons"></div>
+  <div id="navigation-buttons">
+    <button id="previous-button" disabled>Previous</button>
+    <button id="next-button" disabled>Next</button>
+  </div>
+  <div id="score-container" class="hide"></div>
+  <button id="restart-button" class="hide">Restart</button>
+</div>
+<footer>
+  <p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
+  <div class="social-icons">
+      <a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/hawsome_a" class="twitter" target="_blank">
+          <i class="fab fa-twitter"></i>
+      </a>
+      <a href="mailto:awesome.akinfenwa@outlook.com" class="email" target="_blank">
+          <i class="far fa-envelope"></i>
+      </a>
+  </div>
+</footer>
+```
+
+- `<div class="container">`: This div element with the class "container" serves as a wrapper for the main content of the quiz website.
+- `<h1>Quiz Website</h1>`: This heading element displays the title of the quiz website.
+- `<div id="question-container"></div>`: This empty div element with the id "question-container" will be populated dynamically with quiz questions.
+- `<div id="answer-buttons"></div>`: This empty div element with the id "answer-buttons" will be populated dynamically with answer buttons for the quiz questions.
+- `<div id="navigation-buttons">`: This div element contains the navigation buttons for the quiz.
+- `<button id="previous-button" disabled>Previous</button>`: This button element with the id "previous-button" allows the user to go to the previous question. It is initially disabled
+
+.
+- `<button id="next-button" disabled>Next</button>`: This button element with the id "next-button" allows the user to go to the next question. It is initially disabled.
+- `<div id="score-container" class="hide"></div>`: This div element with the id "score-container" will display the user's score. It has the "hide" class applied initially to hide it.
+- `<button id="restart-button" class="hide">Restart</button>`: This button element with the id "restart-button" allows the user to restart the quiz. It has the "hide" class applied initially to hide it.
+
+The footer section contains information about the author and social media links:
+
+```html
+<footer>
+  <p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
+  <div class="social-icons">
+      <a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/hawsome_a" class="twitter" target="_blank">
+          <i class="fab fa-twitter"></i>
+      </a>
+      <a href="mailto:awesome.akinfenwa@outlook.com" class="email" target="_blank">
+          <i class="far fa-envelope"></i>
+      </a>
+  </div>
+</footer>
+```
+
+- `<p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>`: This paragraph element displays the copyright information.
+- `<div class="social-icons">`: This div element with the class "social-icons" contains links to social media profiles.
+- `<a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">`: This anchor element with the class "linkedin" links to the author's LinkedIn profile.
+- `<i class="fab fa-linkedin-in"></i>`: This i element with the class "fab fa-linkedin-in" displays the Font Awesome LinkedIn icon.
+- Similar to the LinkedIn link, there are also anchor elements for Twitter and email with corresponding Font Awesome icons.
+
+Finally, the script tags at the bottom import external JavaScript libraries:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+```
+
+- `<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>`: This script tag imports the Axios library, which is a popular JavaScript library for making HTTP requests.
+- `<script src="script.js"></script>`: This script tag imports a custom JavaScript file named "script.js" that likely contains the logic and functionality for the quiz website.
+
+Overall, the code sets up the structure, styling, and basic functionality for a quiz website with navigation buttons, question containers, answer buttons, and social media links.
+
+CSS: 
+
+The code is a CSS stylesheet that defines the styles for various elements in the quiz website. Let's go through the different sections and explain their purpose:
+
+1. Container Styles:
+```css
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+```
+- `.container`: This class is applied to the container element that wraps the main content of the quiz website.
+- `max-width`: Sets the maximum width of the container to 600 pixels.
+- `margin`: Centers the container horizontally by setting auto margins.
+- `padding`: Adds 20 pixels of padding around the content inside the container.
+- `text-align`: Centers the text content inside the container.
+- `background-color`: Sets the background color of the container to white (#ffffff).
+- `border-radius`: Applies a border radius of 8 pixels, giving the container rounded corners.
+- `box-shadow`: Adds a subtle box shadow to the container for a slight visual effect.
+
+2. Heading Styles:
+```css
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+```
+- `h1`: Targets the `h1` element, which represents the main heading of the quiz website.
+- `font-size`: Sets the font size of the heading to 32 pixels.
+- `margin-bottom`: Adds a bottom margin of 20 pixels to create space between the heading and the content below.
+- `color`: Sets the text color of the heading to a dark gray (#333333).
+
+3. Question Container Styles:
+```css
+#question-container {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333333;
+}
+```
+- `#question-container`: Targets the element with the id "question-container" that holds the quiz questions.
+- `margin-top`: Adds a top margin of 20 pixels to create space between the container and the questions.
+- `font-size`: Sets the font size of the questions to 24 pixels.
+- `color`: Sets the text color of the questions to a dark gray (#333333).
+
+4. Answer Button Styles:
+```css
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+```
+- `#answer-buttons`: Targets the element with the id "answer-buttons" that holds the answer buttons for the quiz questions.
+- `display: flex`: Makes the answer buttons container a flex container.
+- `flex-direction: column`: Arranges the answer buttons vertically in a column.
+- `align-items: center`: Centers the answer buttons horizontally within the container.
+- `gap: 15px`: Adds a vertical gap of 15 pixels between the answer buttons.
+- `margin-top`: Adds a top margin of 20 pixels to create space between the questions and the answer buttons.
+
+5. Button Styles:
+```css
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+```
+
+
+- `button`: Targets all `button` elements on the page.
+- `padding`: Adds 12 pixels of padding on the top and bottom and 24 pixels on the left and right of the button.
+- `font-size`: Sets the font size of the button text to 18 pixels.
+- `background-color`: Sets the background color of the button to a green color (#4CAF50).
+- `color`: Sets the text color of the button to white (#ffffff).
+- `border`: Removes the border around the button.
+- `border-radius`: Applies a border radius of 4 pixels, giving the button slightly rounded corners.
+- `cursor`: Sets the cursor to a pointer when hovering over the button.
+- `transition`: Adds a smooth transition effect to the background color change over 0.3 seconds.
+
+6. Button States and Navigation Styles:
+```css
+#navigation-buttons {
+  margin-top: 20px;
+}
+
+#navigation-buttons button {
+  margin-right: 10px;
+}
+```
+- `#navigation-buttons`: Targets the element with the id "navigation-buttons" that contains the navigation buttons (previous and next buttons) for the quiz.
+- `margin-top`: Adds a top margin of 20 pixels to create space between the answer buttons and the navigation buttons.
+- `#navigation-buttons button`: Targets all button elements within the navigation buttons container.
+- `margin-right`: Adds a right margin of 10 pixels between the previous and next buttons.
+
+7. Score Container Styles:
+```css
+#score-container {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+}
+```
+- `#score-container`: Targets the element with the id "score-container" that displays the user's score.
+- `font-size`: Sets the font size of the score container to 28 pixels.
+- `font-weight`: Sets the font weight to bold.
+- `margin-bottom`: Adds a bottom margin of 20 pixels to create space between the score and the content below.
+- `color`: Sets the text color of the score container to a dark gray (#333333).
+
+8. Answer Selection and Result Styles:
+```css
+.selected {
+  background-color: #2196F3;
+}
+
+.correct {
+  background-color: #4CAF50;
+}
+
+.wrong {
+  background-color: #F44336;
+}
+
+#restart-button::before {
+  content: "\21BA";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#next-button::before {
+  content: "\279C";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#previous-button::before {
+  content: "\279C";
+  display: inline-block;
+  margin-right: 5px;
+  transform: rotateY(180deg);
+}
+
+.correct-answer::before {
+  content: "\2714";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.wrong::before {
+  content: "\2717";
+  display: inline-block;
+  margin-right: 5px;
+}
+```
+- `.selected`: Targets the selected answer button. Changes the background color to a light blue (#2196F3).
+- `.correct`: Targets the correct answer button. Changes the background color to a green color (#4CAF50).
+- `.wrong`: Targets the wrong answer button. Changes the background color to a red color (#F44336).
+- `#restart-button::before`: Adds a content before the restart button. Displays a "↺" icon using the Unicode character "\21BA".
+- `#next-button::before`: Adds a content before the next button. Displays a "➜" icon using the Unicode character "\
+
+279C".
+- `#previous-button::before`: Adds a content before the previous button. Displays a "➜" icon using the Unicode character "\279C" and rotates it 180 degrees using `transform: rotateY(180deg)`.
+- `.correct-answer::before`: Adds a content before the wrong answer button. Displays a "✔" icon using the Unicode character "\2714".
+- `.wrong::before`: Adds a content before the wrong answer button. Displays a "✗" icon using the Unicode character "\2717".
+
+9. Footer Styles:
+```css
+footer {
+  background-color: #f8f8f8;
+  color: #888888;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333333;
+}
+
+.social-icons i {
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover i {
+  color: #171b82;
+}
+
+.social-icons a.linkedin:hover i {
+  color: #0A66C2;
+}
+
+.social-icons a.twitter:hover i {
+  color: #00acee;
+}
+
+.social-icons a.email:hover i {
+  color: #171b82;
+}
+
+.social-icons a:hover i {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+```
+- `footer`: Targets the `footer` element.
+- `background-color`: Sets the background color of the footer to a light gray (#f8f8f8).
+- `color`: Sets the text color of the footer to a lighter gray (#888888).
+- `padding`: Adds 10 pixels of padding to the footer.
+- `text-align`: Centers the text content inside the footer.
+- `border-radius`: Applies a border radius to the bottom corners of the footer, giving it a slightly rounded appearance.
+- `box-shadow`: Adds a subtle box shadow to the bottom of the footer for a slight visual effect.
+- `margin-top`: Adds a top margin of 50 pixels to create space between the content and the footer.
+
+10. Social Icons Styles:
+```css
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333333;
+}
+
+.social-icons i {
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover i {
+  color: #171b82;
+}
+
+.social-icons a.linkedin:hover i {
+  color: #0A66C2;
+}
+```css
+.social-icons a.twitter:hover i {
+  color: #00acee;
+}
+
+.social-icons a.email:hover i {
+  color: #171b82;
+}
+```
+- `.social-icons`: Targets the container that holds the social media icons.
+- `margin-top`: Adds a top margin of 10 pixels to create space between the footer content and the social icons.
+- `.social-icons a`: Targets the anchor tags within the social-icons container.
+- `display: inline-block`: Displays the social media icons as inline-block elements.
+- `margin-right`: Adds a right margin of 10 pixels between the social media icons.
+- `color`: Sets the default color of the social media icons to a dark gray (#333333).
+- `.social-icons i`: Targets the icons within the social-icons container.
+- `font-size`: Sets the font size of the icons to 24 pixels.
+- `transition`: Adds a smooth transition effect to the color change of the icons over 0.2 seconds.
+- `.social-icons a:hover i`: Changes the color of the icons to a darker blue (#171b82) when hovering over the social media links.
+- `.social-icons a.linkedin:hover i`: Changes the color of the LinkedIn icon to a specific shade of blue (#0A66C2) when hovering over the LinkedIn link.
+- `.social-icons a.twitter:hover i`: Changes the color of the Twitter icon to a specific shade of blue (#00acee) when hovering over the Twitter link.
+- `.social-icons a.email:hover i`: Changes the color of the email icon to a specific shade of blue (#171b82) when hovering over the email link.
+
+```css
+.social-icons a:hover i {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+```
+- `.social-icons a:hover i`: Applies an animation when hovering over the social media icons.
+- `animation`: Specifies the animation property for the icons.
+- `bounce`: Refers to the name of the animation.
+- `0.5s`: Defines the duration of the animation as 0.5 seconds.
+- `infinite`: Specifies that the animation should repeat indefinitely.
+- `@keyframes bounce`: Declares the keyframes for the bounce animation.
+- `0%`: Represents the starting point of the animation.
+- `transform: scale(1)`: Sets the initial scale of the icons to 1 (normal size).
+- `50%`: Represents the midpoint of the animation.
+- `transform: scale(1.2)`: Scales the icons to 1.2 times their normal size.
+- `100%`: Represents the end of the animation.
+- `transform: scale(1)`: Resets the icons back to their normal size.
+
+These CSS styles define the appearance and behavior of various elements in the quiz website, including the container, headings, buttons, answer selection, navigation, score, footer, and social media icons.
+
+JavaScript: 
+
+The code is a JavaScript code snippet that implements the functionality of a quiz website. Here's a breakdown of what the code does:
+
+1. Constants:
+   - `apiUrl`: Holds the URL of the API endpoint from which the quiz questions are fetched.
+   - `amountOfQuestions`: Specifies the number of questions to fetch.
+
+2. Variables:
+   - `currentQuestionIndex`: Represents the index of the current question being displayed.
+   - `questions`: Stores the array of fetched questions.
+   - `userAnswers`: Keeps track of the user's answers for each question.
+
+3. `fetchQuestions()` function:
+   - Uses the `axios` library to send a GET request to the specified `apiUrl` with parameters for the desired amount and type of questions.
+   - Upon receiving a successful response, stores the fetched questions in the `questions` variable and calls the `displayQuestion()` function.
+
+4. `displayQuestion()` function:
+   - Retrieves the current question object from the `questions` array based on the `currentQuestionIndex`.
+   - Updates the HTML content of the question container element (`questionContainer`) with the current question's text.
+   - Clears the answer buttons container (`answerButtonsContainer`) to prepare for the new set of answer buttons.
+   - Shuffles all available answers (incorrect and correct) using the `shuffle()` function.
+   - Iterates over the shuffled answers and creates a button element for each answer, assigning a click event listener to the buttons.
+   - Appends the answer buttons to the answer buttons container.
+   - If it is the last question, calls the `showScore()` function and returns to prevent further execution.
+   - Calls the `updateNavigationButtons()` and `updateAnswerButtons()` functions.
+
+5. `selectAnswer(answer)` function:
+   - Sets the user's answer for the current question at the current index in the `userAnswers` array.
+   - Calls the `updateAnswerButtons()` function to visually update the selected answer.
+   - Enables the next button (`nextButton`) since the user has made a selection.
+
+6. `updateAnswerButtons()` function:
+   - Retrieves the current question object.
+   - Retrieves all answer buttons (`answer-button` class) from the answer buttons container.
+   - Removes any previously applied classes for styling (e.g., `selected`, `correct`, `wrong`).
+   - Adds the `selected` class to the button if it matches the user's answer for the current question.
+   - Adds the `correct` class to the button if it represents the correct answer and the user has made a selection.
+   - Adds the `wrong` class to the button if it represents an incorrect answer and the user has selected it.
+   - If the user has answered the current question, finds the correct answer button and adds the `correct-answer` class.
+
+7. `updateNavigationButtons()` function:
+   - Enables or disables the previous and next buttons based on the `currentQuestionIndex`.
+
+8. `showNextQuestion()` function:
+   - Increments the `currentQuestionIndex` to move to the next question.
+   - Calls the `displayQuestion()` function to show the updated question.
+
+9. `showPreviousQuestion()` function:
+   - Decrements the `currentQuestionIndex` to move to the previous question.
+   - Calls the `displayQuestion()` function to show the updated question.
+
+10. `showScore()` function:
+    - Clears the question and answer buttons containers.
+    - Calculates the score by calling the `calculateScore()` function.
+    - Creates a paragraph element to display the score and appends it to the score container (`scoreContainer`).
+    - Hides the previous and next buttons, shows the score container, and displays the restart button.
+
+11. `restartQuiz()`
+
+ function:
+    - Resets the `currentQuestionIndex` and `userAnswers` variables.
+    - Clears the score container's content and hides it.
+    - Hides the restart button.
+    - Calls the `fetchQuestions()` function to start the quiz again.
+
+12. `calculateScore()` function:
+    - Initializes a `score` variable.
+    - Iterates over the questions and user answers arrays, comparing each user answer to the corresponding correct answer.
+    - If the user answer matches the correct answer, increments the `score`.
+    - Returns the calculated score.
+
+13. `decodeHTML(html)` function:
+    - Creates a temporary HTML element (`textarea`) to decode HTML entities in the provided `html` string.
+    - Sets the `innerHTML` property of the textarea to the HTML string, which triggers the decoding of entities.
+    - Returns the decoded text.
+
+14. `shuffle(array)` function:
+    - Implements the Fisher-Yates algorithm to shuffle the elements of the provided array.
+    - Iterates over the array from the last element to the first.
+    - Generates a random index within the range of the current index.
+    - Swaps the element at the current index with the element at the randomly generated index.
+    - Returns the shuffled array.
+
+15. Event listeners:
+    - Adds event listeners to the previous, next, and restart buttons, triggering the corresponding functions when clicked.
+
+The code fetches quiz questions from an API, displays them one by one, allows the user to select an answer, tracks the user's answers, calculates and displays the score, and provides navigation options to move between questions.
